@@ -4,7 +4,9 @@ const Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 //mongoose.connect('mongodb://localhost/nodeappdatabase', {});
 mongoose.connect('mongodb+srv://geestaq:Amhm51pr@cluster0-icaht.mongodb.net/nodeappdatabase?retryWrites=true&w=majority', {
-    useNewUrlParser: true
+    useNewUrlParser: true, //DeprecationWarning
+    useFindAndModify: false, //DeprecationWarning
+    useCreateIndex: true //DeprecationWarning
 });
 
 //new user Schema
