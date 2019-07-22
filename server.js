@@ -108,11 +108,15 @@ const updadeUserPassword = function() {
 
 const updateUsername = function() {
     // update username
-    return User.findOneAndUpdate({ username: 'Benny_the_boy' }, { username: 'Benny_the_man' }, { new: true }, function(err, user) {
-        if (err) throw err;
+    return User.findOneAndUpdate(
+      { username: 'Benny_the_boy' },
+      { username: 'Benny_the_man' },
+      { new: true }
+    ).exec((err, user) => {
+      if (err) throw err;
 
-        console.log('Nazwa uzytkownika po aktualizacji to ' + user.username);
-    })
+      console.log('Nazwa uzytkownika po aktualizacji to ' + user.username);
+    });
 }
 
 const findMarkAndDelete = function() {
